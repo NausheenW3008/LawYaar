@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LawYaar Chatbot</title>
+
+  <!-- Tailwind CDN (temporary for learning) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-blue-900 text-white p-4 text-center text-xl font-semibold">
+    🤖 LawYaar – Legal Assistant
+  </header>
+
+  <!-- Chat Area -->
+  <main id="chatArea" class="bg-blue-100 flex-1 p-4 overflow-y-auto space-y-4">
+
+    <!-- Bot Message -->
+    <div class="flex">
+      <div class="bg-white p-3 rounded-lg shadow max-w-sm">
+        Hello! 👋
+        I am LawYaar, your legal assistant.
+        How can I help you today?
+      </div>
+    </div>
+
+    <!-- User Message -->
+    <div class="flex justify-end">
+      <div class="bg-blue-600 text-white p-3 rounded-lg shadow max-w-sm">
+        I want to know about property disputes.
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Input Box -->
+  <footer class="p-4 bg-white border-t flex gap-2">
+    <input id="userInput" type="text" placeholder="Type your legal question..."
+      class="flex-1 border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    <button id="sendBtn" class="bg-blue-700 text-white px-4 py-2 rounded-lg hover:bg-blue-800">
+      Send
+    </button>
+  </footer>
+  <script>
+    const chatArea = document.getElementById("chatArea");
+    const userInput = document.getElementById("userInput");
+    const sendBtn = document.getElementById("sendBtn");
+
+    sendBtn.addEventListener("click", async () => {
+      const message = userInput.value.trim();
+      if (message === "") return;
+
+      // USER MESSAGE
+      const msgDiv = document.createElement("div");
+      msgDiv.className = "flex justify-end";
+
+      const bubble = document.createElement("div");
+      bubble.className =
+        "bg-blue-600 text-white p-3 rounded-lg shadow max-w-sm";
+      bubble.innerText = message;
+
+      msgDiv.appendChild(bubble);
+      chatArea.appendChild(msgDiv);
+
+      userInput.value = "";
+      chatArea.scrollTop = chatArea.scrollHeight;
+
+      // TYPING INDICATOR
+      const typingDiv = document.createElement("div");
+      typingDiv.className = "flex";
+      typingDiv.id = "typingIndicator";
+
+      const typingBubble = document.createElement("div");
+      typingBubble.className =
+        "bg-gray-200 text-gray-700 p-3 rounded-lg shadow max-w-sm italic";
+      typingBubble.innerText = "LawYaar is typing...";
+
+      typingDiv.appendChild(typingBubble);
+      chatArea.appendChild(typingDiv);
+      chatArea.scrollTop = chatArea.scrollHeight;
+
+      try {
+        // CALL BACKEND
+        const response = await fetch("http://localhost:3000/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message }),
+        });
+
+        const data = await response.json();
+
+        // REMOVE TYPING
+        typingDiv.remove();
+
+        // BOT MESSAGE
+        const botDiv = document.createElement("div");
+        botDiv.className = "flex";
+
+        const botBubble = document.createElement("div");
+        botBubble.className =
+          "bg-white p-3 rounded-lg shadow max-w-sm";
+        botBubble.innerText = data.reply;
+
+        botDiv.appendChild(botBubble);
+        chatArea.appendChild(botDiv);
+        chatArea.scrollTop = chatArea.scrollHeight;
+
+      } catch (error) {
+        typingDiv.remove();
+
+        const errorDiv = document.createElement("div");
+        errorDiv.className = "flex";
+
+        const errorBubble = document.createElement("div");
+        errorBubble.className =
+          "bg-red-100 text-red-700 p-3 rounded-lg shadow max-w-sm";
+        errorBubble.innerText = "Server error. Is backend running?";
+
+        errorDiv.appendChild(errorBubble);
+        chatArea.appendChild(errorDiv);
+        chatArea.scrollTop = chatArea.scrollHeight;
+
+        console.error(error);
+      }
+    });
+
+    // ENTER KEY SUPPORT
+    userInput.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        sendBtn.click();
+      }
+    });
+  </script>
+</body>
+
+</html>

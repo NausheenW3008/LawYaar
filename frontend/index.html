@@ -1,51 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LawYaar</title>
-  <link rel="stylesheet" href="output.css">
-</head>
-<body class="bg-gray-50">
 
- <body class="bg-slate-900 text-white">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LawYaar</title>
+  <link href="./output.css" rel="stylesheet">
+</head>
+
+<body class="bg-slate-50 text-gray-800">
 
   <!-- Navbar -->
-  <nav class="flex items-center justify-between px-8 py-4 bg-slate-800 shadow-lg">
+  <!-- <header class="border-b shadow-sm">
+    <nav class="max-w-7xl mx-auto flex items-center justify-between p-4">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl font-bold text-blue-900">LawYaar</span>
+      </div>
+
+      <ul class="hidden md:flex gap-8 font-medium text-gray-700">
+        <li class="hover:text-blue-900 cursor-pointer">Home</li>
+        <li class="hover:text-blue-900 cursor-pointer">About</li>
+        <li id="faqLink" class="hover:text-blue-900 cursor-pointer">FAQ</li>
+        <li class="hover:text-blue-900 cursor-pointer">Find Lawyer</li>
+        <li class="hover:text-blue-900 cursor-pointer">Login/Signup</li>
+      </ul>
+    </nav>
+  </header> -->
+
+  <header class="w-full flex items-center justify-between px-8 py-4 bg-white shadow-md">
+
+    <!-- Left: Logo + Name -->
     <div class="flex items-center gap-3">
-      <img src="assets/logo.png" alt="LawYaar Logo" class="w-12 h-12 object-contain">
-      <h1 class="text-2xl font-bold tracking-wide">LawYaar</h1>
+      <img src="assets/logo.png" alt="LawYaar Logo" class="w-10 h-10 object-contain" />
+      <h1 class="text-2xl font-bold text-slate-900 tracking-wide">LAWYAAR</h1>
     </div>
 
-    <button class="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700 transition">
-      Get Started
-    </button>
-  </nav>
+    <!-- Center: Navigation -->
+    <nav class="hidden md:flex items-center gap-8 text-gray-700 font-medium">
+      <a href="#" class="hover:text-blue-700">Home</a>
+      <a href="#how" class="hover:text-blue-700">How it Works</a>
+      <a href="#faq" class="hover:text-blue-700">FAQ</a>
+      <a href="find-lawyer.html" class="hover:text-blue-700">Find Lawyer</a>
+    </nav>
+
+    <!-- Right: Login / Signup Button -->
+    <div>
+      <a href="#"
+        class="bg-blue-700 text-white px-5 py-2 rounded-full font-semibold shadow hover:bg-blue-800 transition">
+        Login / Signup
+      </a>
+    </div>
+
+  </header>
+
 
   <!-- Hero Section -->
-  <section class="text-center mt-20 px-6">
-    <h2 class="text-4xl md:text-5xl font-bold mb-6">
-      Empowering You Through Legal Knowledge
-    </h2>
+  <section class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
 
-    <p class="text-gray-300 max-w-2xl mx-auto mb-8">
-      Ask any legal question and get simplified explanations instantly.
-    </p>
+    <!-- Left Content -->
+    <div>
+      <h1 class="text-4xl md:text-5xl font-bold text-blue-900 leading-tight">
+        Empowering You Through <br> Legal Knowledge
+      </h1>
 
-    <!-- Chat Input Preview -->
+      <p class="mt-6 text-gray-600 text-lg">
+        Get instant legal guidance with AI and connect with trusted lawyers
+        based on your needs — all in one place.
+      </p>
+
+      <div class="mt-8 flex gap-4">
+        <a href="chatbot.html" class="bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-800 inline-block">
+          Ask a Legal Question
+        </a>
+        <a href="find-lawyer.html"
+          class="border border-blue-900 text-blue-900 px-6 py-3 rounded-lg hover:bg-blue-50 inline-block">
+          Find a Lawyer
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Image -->
     <div class="flex justify-center">
-      <input 
-        type="text" 
-        placeholder="Ask your legal question..." 
-        class="w-full max-w-xl px-5 py-3 rounded-l-lg text-black outline-none"
-      >
-      <button class="bg-blue-600 px-6 py-3 rounded-r-lg hover:bg-blue-700">
-        Ask
-      </button>
+      <img src="./lawyaar image.jpg" alt="LawYaar Logo" class="w-80 h-auto" />
     </div>
   </section>
 
+  <!-- Features Section -->
+  <section class="bg-gray-50 py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">
+        Our Features
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold text-blue-900">AI Legal Assistant</h3>
+          <p class="mt-4 text-gray-600">
+            Ask legal questions and get instant AI-powered guidance tailored to your situation.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold text-blue-900">Find Verified Lawyers</h3>
+          <p class="mt-4 text-gray-600">
+            Connect with trusted and verified lawyers based on your legal needs.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold text-blue-900">Legal Knowledge Hub</h3>
+          <p class="mt-4 text-gray-600">
+            Explore simplified legal resources and guides to stay informed and empowered.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how" class="py-20 bg-gray-50">
+    <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">
+      How It Works
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-8 px-8">
+      <div class="bg-white p-6 rounded-xl shadow text-center">
+        <h3 class="text-xl font-semibold text-blue-900">1. Ask Your Query</h3>
+        <p class="text-gray-600">Describe your legal issue in simple language.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow text-center">
+        <h3 class="text-xl font-semibold text-blue-900">2. Get AI Guidance</h3>
+        <p class="text-gray-600">Our AI suggests legal steps & possible actions.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow text-center">
+        <h3 class="text-xl font-semibold text-blue-900">3. Connect with Lawyer</h3>
+        <p class="text-gray-600">Find and contact verified lawyers instantly.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FAQ Section (Hidden Initially) -->
+  <section id="faq" class="py-20 px-6">
+    <h2 class="text-3xl font-bold text-center text-blue-900 mb-10">
+      Frequently Asked Questions
+    </h2>
+
+    <div class="max-w-3xl mx-auto space-y-4">
+
+      <!-- Q1 -->
+      <div class="border rounded-lg p-4 cursor-pointer faq-item">
+        <div class="flex justify-between items-center">
+          <h3 class="font-semibold">Is LawYaar free to use?</h3>
+          <span>+</span>
+        </div>
+        <p class="hidden mt-2 text-gray-600">
+          Yes, initial AI guidance is free. Lawyer consultation may be paid.
+        </p>
+      </div>
+
+      <!-- Q2 -->
+      <div class="border rounded-lg p-4 cursor-pointer faq-item">
+        <div class="flex justify-between items-center">
+          <h3 class="font-semibold">Can I directly contact a lawyer?</h3>
+          <span>+</span>
+        </div>
+        <p class="hidden mt-2 text-gray-600">
+          Yes, you can browse and connect with lawyers based on your case.
+        </p>
+      </div>
+
+      <!-- Q3 -->
+      <div class="border rounded-lg p-4 cursor-pointer faq-item">
+        <div class="flex justify-between items-center">
+          <h3 class="font-semibold">Is my data secure?</h3>
+          <span>+</span>
+        </div>
+        <p class="hidden mt-2 text-gray-600">
+          Absolutely. We follow strict data privacy and encryption practices.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white text-center py-6">
+    <p>© 2026 LawYaar. All rights reserved.</p>
+  </footer>
+
+  <!-- Floating Chat Button -->
+  <a href="chatbot.html"
+    class="fixed bottom-6 right-6 bg-blue-900 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-800">
+    Chat with AI
+  </a>
+
+  <!-- <script>
+    const faqLink = document.getElementById("faqLink");
+    const faqSection = document.getElementById("faqSection");
+
+    faqLink.addEventListener("click", () => {
+      faqSection.classList.toggle("hidden");
+      faqSection.scrollIntoView({ behavior: "smooth" });
+    });
+  </script> -->
+
+  <script>
+    const faqs = document.querySelectorAll(".faq-item");
+
+    faqs.forEach(item => {
+      item.addEventListener("click", () => {
+        const answer = item.querySelector("p");
+        answer.classList.toggle("hidden");
+      });
+    });
+  </script>
 </body>
 
-</body>
 </html>

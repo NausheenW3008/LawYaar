@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Find a Lawyer | LawYaar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navbar -->
+  <header class="w-full flex items-center justify-between px-8 py-4 bg-white shadow-md">
+    <div class="flex items-center gap-3">
+      <img src="assets/logo.png" class="w-10 h-10 object-contain" />
+      <h1 class="text-2xl font-bold text-blue-900">LAWYAAR</h1>
+    </div>
+
+    <nav class="hidden md:flex items-center gap-8 text-gray-700 font-medium">
+      <a href="index.html" class="hover:text-blue-700">Home</a>
+      <a href="#" class="hover:text-blue-700">How it Works</a>
+      <a href="#" class="hover:text-blue-700">FAQ</a>
+    </nav>
+
+    <a href="#" class="bg-blue-700 text-white px-5 py-2 rounded-full font-semibold hover:bg-blue-800">
+      Login / Signup
+    </a>
+  </header>
+
+  <!-- Hero -->
+  <section class="text-center py-16 bg-white">
+    <h1 class="text-4xl font-bold text-blue-900">Find the Right Lawyer</h1>
+    <p class="text-gray-600 mt-4">
+      Browse verified lawyers based on your legal needs and location.
+    </p>
+  </section>
+
+  <!-- Search + Filters -->
+  <section class="max-w-6xl mx-auto px-6 py-10">
+    <div class="bg-white p-6 rounded-xl shadow-md flex flex-col md:flex-row gap-4 items-center justify-between">
+      
+      <!-- Search -->
+      <input 
+        type="text" 
+        placeholder="Search by specialization (e.g., Criminal, Civil, Family)" 
+        class="w-full md:w-1/2 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+      />
+
+      <!-- Location -->
+      <input 
+        type="text" 
+        placeholder="Enter city (e.g., Delhi, Mumbai)" 
+        class="w-full md:w-1/4 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+      />
+
+      <!-- Button -->
+      <button class="bg-blue-900 text-white px-6 py-2 rounded-lg hover:bg-blue-800">
+        Search
+      </button>
+    </div>
+  </section>
+
+  <!-- Lawyer Cards -->
+  <section class="max-w-6xl mx-auto px-6 pb-16">
+    <div class="grid md:grid-cols-2 gap-8">
+
+      <!-- Lawyer Card 1 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <div class="flex items-center gap-4">
+          <img src="https://via.placeholder.com/80" class="w-20 h-20 rounded-full object-cover"/>
+          <div>
+            <h3 class="text-xl font-bold text-blue-900">Adv. Priya Sharma</h3>
+            <p class="text-gray-600">Family Lawyer • 8 Years Experience</p>
+            <p class="text-sm text-gray-500">Delhi High Court</p>
+          </div>
+        </div>
+
+        <p class="mt-4 text-gray-600">
+          Specializes in divorce, child custody, and family dispute resolution cases.
+        </p>
+
+        <div class="mt-4 flex justify-between items-center">
+          <span class="text-green-600 font-semibold">Consultation: ₹1500</span>
+          <button class="bg-blue-900 text-white px-4 py-2 rounded-lg hover:bg-blue-800">
+            View Profile
+          </button>
+        </div>
+      </div>
+
+      <!-- Lawyer Card 2 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <div class="flex items-center gap-4">
+          <img src="https://via.placeholder.com/80" class="w-20 h-20 rounded-full object-cover"/>
+          <div>
+            <h3 class="text-xl font-bold text-blue-900">Adv. Rahul Mehta</h3>
+            <p class="text-gray-600">Criminal Lawyer • 10 Years Experience</p>
+            <p class="text-sm text-gray-500">Mumbai High Court</p>
+          </div>
+        </div>
+
+        <p class="mt-4 text-gray-600">
+          Expert in criminal defense, bail matters, and cyber crime cases.
+        </p>
+
+        <div class="mt-4 flex justify-between items-center">
+          <span class="text-green-600 font-semibold">Consultation: ₹2000</span>
+          <button class="bg-blue-900 text-white px-4 py-2 rounded-lg hover:bg-blue-800">
+            View Profile
+          </button>
+        </div>
+      </div>
+
+      <!-- Lawyer Card 3 -->
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <div class="flex items-center gap-4">
+          <img src="https://via.placeholder.com/80" class="w-20 h-20 rounded-full object-cover"/>
+          <div>
+            <h3 class="text-xl font-bold text-blue-900">Adv. Neha Verma</h3>
+            <p class="text-gray-600">Corporate Lawyer • 6 Years Experience</p>
+            <p class="text-sm text-gray-500">Bangalore</p>
+          </div>
+        </div>
+
+        <p class="mt-4 text-gray-600">
+          Handles company law, contracts, and startup legal advisory.
+        </p>
+
+        <div class="mt-4 flex justify-between items-center">
+          <span class="text-green-600 font-semibold">Consultation: ₹2500</span>
+          <button class="bg-blue-900 text-white px-4 py-2 rounded-lg hover:bg-blue-800">
+            View Profile
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+<!-- Floating Chat Button -->
+<a href="chatbot.html"
+   class="fixed bottom-6 right-6 bg-blue-900 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-800 transition">
+  Chat with AI
+</a>
+</body>
+</html>
