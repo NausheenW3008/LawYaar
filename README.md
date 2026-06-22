@@ -32,10 +32,6 @@ LawYaar is a full-stack platform that gives instant, AI-powered legal guidance a
 - Groq SDK / OpenAI SDK (AI chat completions)
 - CORS, dotenv
 
-**Deployment**
-- Frontend → Netlify
-- Backend → Render
-
 ---
 
 ## 📂 Project Structure
