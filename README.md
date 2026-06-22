@@ -118,12 +118,7 @@ The app will be live at `http://localhost:5173`.
 
 ---
 
-## ☁️ Deployment
 
-- **Backend (Render):** Root directory `backend`, build command `npm install`, start command `npm start`, environment variables set in Render dashboard.
-- **Frontend (Netlify):** Base directory `frontend-react`, build command `npm run build`, publish directory `frontend-react/dist`, with a `_redirects` file (`/* /index.html 200`) for React Router support.
-
----
 
 ## 🗺️ Roadmap
 
